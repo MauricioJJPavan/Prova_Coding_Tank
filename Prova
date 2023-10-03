@@ -1,1 +1,307 @@
-em breve... apos a autorização
+Avaliação Coding Tank
+Instruções importantes
+Crie um notebook intitulado seu_nome_completo.ipynb (com o seu nome completo) e responda às perguntas justificando sua resposta em todos os casos.
+
+As alternativas corretas devem ser indicadas e justificadas. Nas questões que pedem que um código seja escrito, inclua o código bem como comentários explicando seu raciocínio.
+
+Nesta avaliação serão considerados apenas soluções que utilizem os conteúdos ensinados em aula. Não use conteúdo extra, mesmo que saiba resolver!
+
+Boa avaliação!
+1) Considere o seguinte trecho de código, parte de um sistema de entrega de alimentos por aplicativo:
+
+i = input('Digite o número da casa: ')
+Caso o usuário digite na caixa de texto de entrada o valor 142, qual será o tipo de dado da variável i?
+
+a) int
+
+b) str  ############ minha resposta
+
+c) float
+
+d) bool
+
+e) list
+i = input('Digite o número da casa: ')
+type(i)
+# b) str
+2) Você precisa implementar um código em Python que calcula o preço total de uma compra, dado o preço unitário de um dado produto (armazenado na variável preco) e a quantidade de unidades compradas (armazenado na variável quantidade). Assuma que temos apenas um único produto comprado. Assinale a alternativa que corretamente implementa este procedimento:
+
+a) preco_total = quantidade *= preco
+
+b) preco_total = quantidade * preco ############ minha resposta
+
+c) preco_total = quantidade += preco
+
+d) preco_total = quantidade / preco
+
+e) nda
+quantidade = 1
+preco = 10
+preco_total = quantidade * preco
+print(preco_total)
+3) Na variável restaurantes_ano temos uma lista de listas, em que cada elemento é uma lista de dois elementos, em que o primeiro é o nome de um restaurante cadastrado na plataforma de delivery, e o segundo é o ano em que o cadastro foi realizado. Você deseja criar uma nova lista de listas, em que cada elemento é uma lista de dois elementos, sendo o primeiro o nome do restaurante (como é na lista original), e o segundo é o número de anos em que o restaurante está cadastrado na plataforma (considere que o ano atual é 2023). Qual das alternativas a seguir corretamente completa o trecho de código iniciado abaixo, para corretamente construir a lista desejada?
+
+restaurantes_idade = []
+
+for lista in restaurantes_ano:
+
+    # o código da alternativa correta deve vir aqui
+Ao revisar este código, qual das alternativas a seguir produz o mesmo resultado?
+
+a) restaurantes_idade.append([lista[0], lista[1] - 2023])
+
+b) restaurantes_idade.append([lista[1], 2023 - lista[0]])
+
+c) restaurantes_idade.append([lista[1], lista[0] - 2023])
+
+d) restaurantes_idade.append([lista, 2023 - lista])
+
+e) restaurantes_idade.append([lista[0], 2023 - lista[1]])   ############ minha resposta
+
+restaurantes_idade = []
+
+for lista in restaurantes_ano:
+
+    restaurantes_idade.append([lista[0], 2023 - lista[1]])
+
+4) Queremos criar uma lista para armazenar os preços dos produtos de determinado restaurante. Em qual das opções abaixo a variável precos_produtos não é uma lista?
+
+a) precos_produtos = []
+
+b) precos_produtos = list("1 2 3 4")
+
+c) precos_produtos = (1, 1.5, 3.8)    ############ minha resposta
+
+d) precos_produtos = [1, 2, 3, 4]
+
+e) precos_produtos = list()
+
+iFood
+c) precos_produtos = (1, 1.5, 3.8)    ############ minha resposta
+5) Quando determinado entregador de um serviço de delivery atinge 100 entregas feitas, ele recebe uma gratificação, indicando que ele subiu de nível na plataforma de entregas. Enquanto este número não é alcançado, uma mensagem indicando quantas entregas ainda faltam é exibida na tela. Para implementar esta lógica, você começou criando o seguinte código:
+
+num_entregas = 0
+nivel = 0
+
+while (num_entregas < 100):
+
+    print(f"Faltam {100 - num_entregas} entregas para você mudar de nível!")
+
+    # código da alternativa correta aqui
+    num_entregas += 1      ############ minha resposta
+
+print("\nVocê atingiu o próximo nível!")
+nivel = 1
+num_entregas = 0
+nivel = 0
+
+while (num_entregas < 100):
+    print(f"Faltam {100 - num_entregas} entregas para você mudar de nível!")
+
+    # código da alternativa correta aqui
+    num_entregas += 1
+
+print("\nVocê atingiu o próximo nível!")
+nivel = 1
+
+6) Em um aplicativo de delivery, é muito importante que as entregas sejam feitas no menor tempo possível, para maior satisfação dos clientes. Pensando nisso, uma importante componente do sistema informacional de entregas deve calcular qual é o tempo estimado de entrega de um pedido, com base na distância entre o restaurante e o destino, e assumindo que o entregador viaja a uma velocidade constante de 50 km/h. Faça um código em Python que calcule o tempo de entrega em minutos, completando o template de código a seguir, na qual a distância em km deve ser informada pelo usuário:
+
+
+velocidade = 50
+
+distancia = float(input("Digite a distância em km: ")) # código para receber como input do usuário a distância em km
+
+tempo = (distancia / velocidade) * 60 # código que implementa a lógica do cálculo do tempo, em minutos
+
+print(f"\nO tempo estimado de entrega é de {tempo} minutos!")
+
+Dica: o tempo necessário para percorrer uma dada distância à velocidade constante é dado pelo quociente entre a distância e a velocidade. Atenção às unidades!
+velocidade = 50
+
+distancia = float(input("Digite a distância em km: ")) # código para receber como input do usuário a distância em km
+
+tempo = (distancia / velocidade) * 60  # código que implementa a lógica do cálculo do tempo, em minutos
+
+print(f"\nO tempo estimado de entrega é de {tempo} minutos!")
+
+
+7) Em um aplicativo de delivery, é importante que tenhamos um registro de todos os clientes que fazem pedidos em determinado restaurante, para que seja possível enviarmos cupons de desconto para os clientes que mais pedem, por exemplo.
+
+Para começar a prototipar esta funcionalidade no aplicativo, você deve criar um programa em Python que leia diversos números inteiros e insira todos em uma lista (esses números são os identificadores dos clientes). A cada solicitação de número, pergunte ao usuário se deseja inserir outro número: tendo como resposta 'S' para inserir mais um; ou 'N' caso queira terminar. É possível que o mesmo número seja digitado mais de uma vez (isso pode representar o mesmo cliente fazendo mais de um pedido). Após construir a lista, mostre:
+
+todos os números digitados na ordem em que foram inseridos
+
+todos os números digitados em ordem crescente
+
+a média destes valores
+
+apenas os números pares
+
+apenas os números ímpares
+
+apenas os números repetidos
+num_dig = []
+
+while True:
+    numero = int(input("Digite o número do cliente: "))
+    num_dig.append(numero)
+
+    continuar = input("Deseja inserir outro número? (S/N): ")
+    if continuar.upper() != "S":
+        break
+
+print("\nNúmeros digitados na ordem em que foram inseridos:", num_dig)
+
+crescente = sorted(num_dig)
+print("Números digitados em ordem crescente:", crescente)
+
+soma = sum(num_dig)
+media = soma / len(num_dig)
+print(f"A média dos valores é: {media}")
+
+pares = []
+for num in num_dig:
+    if num % 2 == 0:
+        pares.append(num)
+
+print("Números pares:", pares)
+
+impares = []
+for num in num_dig:
+    if num % 2 != 0:
+        impares.append(num)
+
+print("Números impares:", impares)    
+
+
+repetidos = []
+for num in num_dig:
+    if num_dig.count(num) > 1 and num not in repetidos:
+        repetidos.append(num)
+
+print("Números repetidos:", repetidos)
+
+
+8) Para que a entrega de alimentos seja feita com qualidade por um serviço de delivery, é muito importante que as caixas de transporte utilizadas por entregadores tenham um revestimento térmico interno, para manter a temperatura dos alimentos. Muitos destes revestimentos são importados de países que utilizam diferentes escalas de temperatura, de modo que as especificações quanto às temperaturas de operação podem gerar confusão.
+
+Pensando nisso, escreva um código em Python que recebe um número (que possa ter casas decimais) e a escala de temperatura em que este valor se encontra e para qual ele deseja converter (Celsius, Kelvin ou Fahrenheit). Tanto na escala em que se encontra quanto para a que deseja converter, utilize as letras iniciais como entrada: Celsius - 'C', Kelvin - 'K' ou Fahrenheit - 'F'.
+
+Seu código deve solicitar ao usuário as informações necessárias para realizar a conversão de temperatura (temperatura, escala_original, escala_convertida), de acordo com o template abaixo.
+
+
+temperatura = # código para receber o valor numérico da temperatura desejada
+
+escala_original = # código para receber a escala original da temperatura informada
+
+escala_convertida = # código para receber a escala para a qual deseja-se converter a temperatura
+
+implemente abaixo toda a lógica de conversão de temperaturas, bem como as validações necessárias
+Importante: o programa deve trabalhar apenas com as 3 escalas supracitadas! Então, não deixe de fazer as validações necessárias. Além disso, por definição, não existem temperaturas em Kelvin abaixo de zero (o valor zero pode existir), portanto verifique também esta condição para que sejam feitas conversões válidas!
+
+Dica: as equações de conversão entre as escalas são as seguintes:
+
+Celsius <> Fahrenheit:
+
+\color{white}{\frac{C}{5} = \frac{F - 32}{9}}
+Celsius <> Kelvin:
+
+\color{white}{C = K - 273}
+Kelvin <> Fahrenheit:
+
+\color{white}{\frac{K - 273}{5} = \frac{F - 32}{9}}
+temperatura = float(input("Digite a temperatura: "))
+original = input("Digite a escala original (C, F, K): ").upper()
+convertida = input("Digite a escala desejada (C, F, K): ").upper()
+
+if original not in ['C', 'F', 'K'] or convertida not in ['C', 'F', 'K']:
+    print("Por favor, insira escalas válidas (C, F, K).")
+else:
+    resultado = None
+
+    if original == 'C':
+        if convertida == 'F':
+            resultado = (temperatura * 9/5) + 32
+        elif convertida == 'K':
+            resultado = temperatura + 273
+    elif original == 'F':
+        if convertida == 'C':
+            resultado = (temperatura - 32) * 5/9
+        elif convertida == 'K':
+            resultado = (temperatura - 32) * 5/9 + 273
+    elif original == 'K':
+        if convertida == 'C' and temperatura >= 0:
+            resultado = temperatura - 273
+        elif convertida == 'F' and temperatura >= 0:
+            resultado = (temperatura - 273) * 9/5 + 32
+
+    if resultado is not None:
+        print(f"\n{temperatura} {original} é igual a {resultado} {convertida}.")
+    else:
+        print("Não é possível converter devido à condição de Kelvin não permitir valores abaixo de zero." if original == 'K' else "As escalas inseridas não são válidas.")
+
+temperatura = float(input("Digite o valor numérico da temperatura desejada: "))
+escala_original = input("\nDigite a escala original da temperatura \nC para Celsius \n K para Kelvin \n F para Farenheit): ").upper()
+escala_convertida = input("Digite a escala para a qual deseja-se converter a temperatura \nC para Celsius \n K para Kelvin \n F para Farenheit: ").upper()
+
+# não usei o while porque nao rodou.... mas como não precisa de uma opçao para sair, dessa forma acredito que esteja correto tbm
+if escala_original =="C" and escala_convertida== "K":
+    resultado = temperatura + 273.15
+elif escala_original == "C"and escala_convertida == "F":
+    resultado = (temperatura * 9/5) + 32
+elif escala_original== "K"and escala_convertida == "C":
+    resultado = temperatura - 273.15
+elif escala_original == "K" and escala_convertida =="F":
+    resultado = (temperatura - 273.15) * 9/5 + 32
+elif escala_original =="F" and escala_convertida =="C":
+    resultado = (temperatura - 32) * 5/9
+elif escala_original=="F" and escala_convertida == "K":
+    resultado = (temperatura - 32) * 5/9 + 273.15
+else:
+    resultado = temperatura
+9) Um restaurante deseja saber quais são seus produtos mais vendidos em um aplicativo de delivery. Em uma lista, há registrados os nomes dos produtos, na ordem em que eles são vendidos (portanto, há elementos repetidos nesta lista). Faça um programa que exibe na tela cada um dos produtos na lista de input, e a quantidade em que eles foram vendidos (separados por um traço), de modo que teremos uma mensagem em cada linha. Os produtos devem ser exibidos em ordem alfabética.
+
+Ex.: para a lista produtos = ["Hambúrguer", "Fritas", "Fritas", "Refrigerante", "Fritas", "Hambúrguer"]
+
+Devemos ter as seguintes mensagens exibidas na tela:
+
+Fritas - 3
+Hambúrguer - 2
+Refrigerante - 1
+#poderia fazer input para receber os itens tambem
+#produtos = ["Hambúrguer", "Fritas", "Fritas", "Refrigerante", "Fritas", "Hambúrguer"]
+produtos = ["Hambúrguer", "Fritas", "Refrigerante", "Fritas", "Hot Dog", "Fritas", "Milkshake", "Hot Dog", "Pizza", "Refrigerante"]
+
+produtos = sorted(produtos)
+
+prod_unic = []
+cont = []
+
+for produto in produtos:
+    if produto not in prod_unic:
+        prod_unic.append(produto)
+        cont.append(1)
+    else:
+        index = prod_unic.index(produto)
+        cont[index] += 1
+
+for i in range(len(prod_unic)):
+    print(f"{prod_unic[i]} - {cont[i]}")
+
+10) Para bem distribuir os pedidos aos entregadores disponíveis, um aplicativo de delivery usa a seguinte regra:
+
+cada entregador deve entregar, em uma única corrida, no máximo 5 pedidos;
+as casas de destino que serão atribuídas a um mesmo entregador serão todas quelas que estão a um raio de no máximo 10 km do restaurante, respeitando a regra anterior.
+Considere que como input do problema, recebemos uma lista em que cada elemento armazena a distância (de linha reta) em km entre a casa que fez o respectivo pedido e o restaurante. Faça um código que distribua estes pedidos a um dado entregador, seguindo as regras acima, de modo que a saída deve ser uma lista que contém os índices dos elementos da lista original que farão parte da corrida do entregador - considere que os primeiros elementos da lista têm prioridade.
+lista = [15, 9, 3, 7, 6, 12, 8, 13, 4, 1, 9, 5, 10, 2, 7, 8, 9, 3, 6, 1]
+pedidos = []
+indices_pedidos = []
+
+for i in range(len(lista)):
+    valor = lista[i]
+    if valor <= 10:
+        pedidos.append(valor)
+        indices_pedidos.append(i)
+
+entrega = pedidos[:5]
+
+print(f"Lista dos indices da entrega: {entrega}")
