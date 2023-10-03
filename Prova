@@ -305,3 +305,9 @@ for i in range(len(lista)):
 entrega = pedidos[:5]
 
 print(f"Lista dos indices da entrega: {entrega}")
+
+
+
+
+Particularmente achei uma prova mal escrita com questões vagas de duplo entendimento 
+o que leva a falta de trasparencia do processo!
